@@ -1,31 +1,40 @@
 <html>
-<script type="text/javascript">;
-function updateClock() {
-//© OBH 2021 - www.oliverboorman.biz 
 
-var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  <head>
+    <script type="text/javascript">;
+    function updateClock() {
 
-var now = new Date();
-var day = now.getDay();
-var date = now.getDate();
-var month = now.getMonth();
-var year = now.getFullYear();
-var hour = now.getHours();
-var minute = now.getMinutes();
-var second = now.getSeconds();
+    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-if(date<10) date = "0" + date;
-if(hour<10) hour = "0" + hour;
-if(minute<10) minute = "0" + minute;
-if(second<10) second = "0" + second;
+    var now = new Date();
+    var day = now.getDay();
+    var date = now.getDate();
+    var month = now.getMonth();
+    var year = now.getFullYear();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
 
-var firstRow = hour + ":" + minute + ":" + second + '';
-document.getElementById("row1").innerHTML = firstRow;
-var secondRow = days[day] + "&nbsp;" + date + "/" + months[month] + "/" + year + '';
-document.getElementById("row2").innerHTML = secondRow;
+    if(date<10) date = "0" + date;
+    if(hour<10) hour = "0" + hour;
+    if(minute<10) minute = "0" + minute;
+    if(second<10) second = "0" + second;
 
-setTimeout("updateClock()",1000);
-} 
-</script>
+    var firstRow = hour + ":" + minute + ":" + second + '';
+    document.getElementById("row1").innerHTML = firstRow;
+    var secondRow = days[day] + "&nbsp;" + date + "/" + months[month] + "/" + year + '';
+    document.getElementById("row2").innerHTML = secondRow;
+
+    setTimeout("updateClock()",1000);
+    } 
+    </script>
+  </head>
+
+  <body>
+    <time id="row1"></time>
+    <time id="row2"></time>
+    <script type="text/javascript">updateClock();</script>
+  </body>
+
 </html>
