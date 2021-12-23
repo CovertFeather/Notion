@@ -4,26 +4,18 @@
     <script type="text/javascript">;
     function updateClock() {
 
-    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var days = ["日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日"];
+    var months = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"];
 
     var now = new Date();
     var day = now.getDay();
     var date = now.getDate();
     var month = now.getMonth();
     var year = now.getFullYear();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
 
     if(date<10) date = "0" + date;
-    if(hour<10) hour = "0" + hour;
-    if(minute<10) minute = "0" + minute;
-    if(second<10) second = "0" + second;
 
-    var firstRow = hour + ":" + minute + ":" + second + '';
-    document.getElementById("row1").innerHTML = firstRow;
-    var secondRow = days[day] + "&nbsp;" + date + "/" + months[month] + "/" + year + '';
+    var secondRow = days[day] + "&nbsp;" + date + "日/" + months[month] + "/" + year + '';
     document.getElementById("row2").innerHTML = secondRow;
 
     setTimeout("updateClock()",1000);
@@ -32,7 +24,6 @@
   </head>
 
   <body>
-    <time id="row1"></time>
     <time id="row2"></time>
     <script type="text/javascript">updateClock();</script>
   </body>
